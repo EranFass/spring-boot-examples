@@ -9,7 +9,8 @@ pipeline {
 
     stage('maven compile') {
       steps {
-        sh 'mvn build'
+        sh '''cd spring-boot-examples/spring-boot-package-war/
+mvn build'''
       }
     }
 
