@@ -27,8 +27,21 @@ mvn test'''
       steps {
         sh '''cd spring-boot-package-war
 mvn build-helper:parse-version versions:set -DnewVersion=0.0.2.$BUILD_ID-SNAPSHOT versions:commit
-mvn clean package
+
 '''
+      }
+    }
+
+    stage('packege  {mvn clean packege}') {
+      steps {
+        sh '''cd spring-boot-package-war  
+mvn clean packege'''
+      }
+    }
+
+    stage('slack') {
+      steps {
+        slackSend(token: '88MKFRxoVHUPEqYExlB9P59f', channel: 'project-j8c7732', message: 'new mvn build bitchesss', notifyCommitters: true)
       }
     }
 
