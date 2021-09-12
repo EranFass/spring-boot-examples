@@ -42,7 +42,7 @@ mvn clean package
 
     stage('slack') {
       steps {
-        slackSend(token: '88MKFRxoVHUPEqYExlB9P59f', channel: 'project-j8c7732', message: 'new mvn build bitchesss', notifyCommitters: true)
+        slackSend(token: '88MKFRxoVHUPEqYExlB9P59f', channel: 'int-project', message: 'new mvn build bitchesss', notifyCommitters: true)
       }
     }
 
